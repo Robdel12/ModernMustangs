@@ -11,8 +11,11 @@ MondernMustangs::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root :to => "pages#home"
+  root :to => "blog#index"
   get '/home' => 'pages#home'
+  
+  get 'blog' => 'blog#index'
+  get 'blog/:title' => 'blog#post'
 
 
 end
