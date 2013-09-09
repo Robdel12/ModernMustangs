@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- For devise error messages -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

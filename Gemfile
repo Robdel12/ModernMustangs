@@ -6,6 +6,17 @@ gem 'rails', '4.0.0'
 #For blogging with Jekyll 
 gem 'bloggy'
 
+#Forums for rails 4 and its dependencies
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'friendly_id', github: "FriendlyId/friendly_id"
+gem 'cancan', git: "https://github.com/nukturnal/cancan.git"
+
+#pagination
+gem 'will_paginate', '3.0.4'
+
+#Devise for a user model and logging in & our
+gem 'devise'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
