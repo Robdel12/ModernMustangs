@@ -20,7 +20,7 @@ Modern Mustang Roadmap
   * Mod list of cars
   * Classified feedback/current listings/past listings
   * "News feed"? "Recent activity"? That'd be cool
-  * Wish list of cars
+  * Wish list of mods
   * Differnt cars owned, currently owned
   
 * Social network type thing
