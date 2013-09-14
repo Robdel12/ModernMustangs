@@ -6,11 +6,13 @@ title: Modern Mustangs
   <title>{{ page.title }}</title>
 <% end %>
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="/blog{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<div id="blogroll">
+  {% for post in site.posts %}
+    <h1><a href="/blog{{ post.url }}">{{ post.title }}</a></h1> <span class="post-date">{{ post.date | date_to_string }}</span>
+    {% if post.content contains '<!-- more -->' %}
+      {{ post.content | split:'<!-- more -->' | first }}
+    {% else %}
+        <!-- Case for when no excerpt is defined -->
+    {% endif %}
+  {% endfor %}
 </div>
