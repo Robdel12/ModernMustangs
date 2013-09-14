@@ -1,0 +1,53 @@
+@import "thumper";
+@include thumper-developement-grids;
+
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+}
+.blog-body{
+  background-color: #F7F7F7;
+}
+.sidebar{
+  height: 100%;
+  margin-top: 0;
+  background-color: rgb(48, 48, 48);
+  position: relative;
+  .stripe{
+    position: absolute;
+    height: 100%;
+    border-width: 14px;
+    border-style: solid;
+  }
+  .stripe-container{
+    position: absolute;
+    left: 30%;
+    height: 100%;
+    width: 50%;
+  }
+  .red{
+    border-color: red;
+    left: 0;
+  }
+  .white{
+    border-color: white;
+    left: 17%;
+  }
+  .blue{
+    border-color: blue;
+    left: 33%;
+  }
+  .logo{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: -20%;
+    top: 50%;
+  }
+}
+.content{
+
+}

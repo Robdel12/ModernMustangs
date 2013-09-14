@@ -1,0 +1,121 @@
+// -------------------------------------------------------------------------
+//  Reset - http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126
+// -------------------------------------------------------------------------
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, 
+samp, small, strike, sub, sup, tt, var, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, 
+canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, 
+section, summary, time, mark, audio, video{margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}
+ol,ul{list-style: none; width: 100%;}
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+body{
+	h1{font-size: 30px;}
+	h2{font-size: 26px;}
+	h3{font-size: 20px;}
+	h4{font-size: 16px;}
+	p{font-size: 16px;}
+}
+
+//======================================================== Grid Vars ==========================================================
+
+$gutter: 2%;
+
+$prefix: (
+	'one','two','three','four','five',
+	'six','seven','eight','nine','ten',
+	'eleven','twelve','thirteen','fourteen',
+	'fifteen','sixteen','seventeen',
+	'eighteen','nineteen','twenty'
+);
+
+$suffix: (
+	'full','half','third','fourth','fifth',
+	'sixth','seventh','eighth','nineth','tenth',
+	'eleven','twelve','thirteen','fourteen',
+	'fifteen','sixteen','seventeen',
+	'eighteen','nineteen','twenty'
+);
+
+//======================================================== Grid Mixin =========================================================
+
+@mixin thumper-grid( $n, $d ) {
+	$pre: nth( $prefix, $n );
+	$sfx: nth( $suffix, $d );
+
+	$p: (100% - $gutter * ($d - 1))/$d;
+	$w: $p * $n + $gutter * ($n - 1);
+
+	$class-name: #{$pre}-#{$sfx};
+	@if $n == $d or $n > $d { $class-name: nth( $suffix, 1 ); }
+	@if $n == 1 and $d == 2 { $class-name: nth( $suffix, 2 ); }
+
+	.#{$class-name} { width: if( $w > 100%, 100%, $w ); }
+}
+
+@mixin thumper-developement-grids {
+	@include thumper-grid(1,1);
+
+	@for $i from 1 through 20 {
+		@for $k from 1 to $i {
+			@include thumper-grid( $k, $i );
+		}
+	}
+}
+
+//=========================================================== Grid ============================================================
+
+.grid{float:left; margin: 1% $gutter 0 0;}
+.clear{clear: both;}
+img{max-width: 100%; height: auto;}
+.wrap{width: 100%;}
+.pad{padding: 0 20px 0 20px;}
+.contain{width: 100%; max-width: 1140px; margin: 0 auto;}
+.last{margin-right: 0 !important;}
+.space{content: ' '; visibility: hidden;}
+
+
+//Setting up mixins for Media Queries
+
+@mixin breakpoint($point) {
+  @if $point == smallerDesktop {
+    @media (min-width: 861px) and (max-width: 1040px){@content;}
+  }
+  @else if $point == tablet {
+    @media (min-width: 640px) and (max-width: 860px) {@content;}
+  }
+  @else if $point == mobile {
+    @media (max-width: 639px){@content;}
+  }
+}
+
+
+// -------------------------------------------------------------------------
+//  Smaller desktop: 1024px > 960px Width
+// ------------------------------------------------------------------------- 
+@media only screen and (min-width: 861px) and (max-width: 1040px) {	
+	.grid{float:left; margin: 1.2% 2% 0 0;}
+
+}
+
+
+// -------------------------------------------------------------------------
+//  Tablet (Common) : 860px > 640px Width
+// -------------------------------------------------------------------------
+@media only screen and (min-width: 640px) and (max-width: 860px) {
+	.grid{float:left; margin: 1.5% 2% 0 0;}
+}
+
+
+// -------------------------------------------------------------------------
+//  Mobile (Common) : 639px > 0px Width
+// -------------------------------------------------------------------------
+@media only screen and (max-width: 639px) {
+	$full: 100%;
+	.grid{float:left; width: $full !important; margin: 2% 3% 0 0;} 
+	.pad{padding: 0 2.5% 0 2.5%;}
+}

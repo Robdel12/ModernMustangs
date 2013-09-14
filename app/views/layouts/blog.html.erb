@@ -9,13 +9,26 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="assets/mediaqueries.js"></script>
+  <![endif]-->
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
 </head>
-<body>
-  <!-- For devise error messages -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  
-  <%= yield %>
-
+<body class="blog-body">
+  <div class="grid five-twenty sidebar">
+    <div class="stripe-container">
+      <div class="red stripe"></div>
+      <div class="white stripe"></div>
+      <div class="blue stripe"></div>
+      <%= image_tag 'logo.png', class: 'logo' %>
+    </div>
+  </div>
+  <div class="grid fiveteen-twenty content last">
+    <!-- For devise error messages -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
 </body>
 </html>
