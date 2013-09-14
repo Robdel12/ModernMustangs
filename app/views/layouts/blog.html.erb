@@ -16,19 +16,21 @@
   <script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
 </head>
 <body class="blog-body">
-  <div class="grid five-twenty sidebar">
+  <aside class="sidebar">
     <div class="stripe-container">
       <div class="red stripe"></div>
       <div class="white stripe"></div>
       <div class="blue stripe"></div>
       <%= image_tag 'logo.png', class: 'logo' %>
     </div>
-  </div>
-  <div class="grid fifteen-twenty content last">
-    <!-- For devise error messages -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </div>
+  </aside>
+  <section class="content">
+    <div class="content-inner">
+      <!-- For devise error messages -->
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+  </section>
 </body>
 </html>

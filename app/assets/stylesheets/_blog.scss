@@ -3,9 +3,12 @@
 }
 .sidebar{
   height: 100%;
-  margin-top: 0;
   background-color: rgb(48, 48, 48);
-  position: relative;
+  width: 30%;
+  max-width: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
   .stripe{
     position: absolute;
     height: 100%;
@@ -39,5 +42,11 @@
   }
 }
 .content{
+  position: absolute;
+  left: 30%;
   height: 100%;
+  .content-inner{
+    padding: 30px 50px;
+    width: 100%;
+  }
 }
