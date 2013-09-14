@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+<% content_for :title do %>
+  <title>{{ page.title }}</title>
+<% end %>
+
 <div id="post">
 {{ content }}
 </div>

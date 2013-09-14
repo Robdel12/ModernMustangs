@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% if content_for?(:title) %>
+    <%= content_for(:title) %>
+  <% else %>
+    <title>Modern Mustangs</title>
+  <% end %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!-- For devise error messages -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
+  <%= yield %>
+
+</body>
+</html>

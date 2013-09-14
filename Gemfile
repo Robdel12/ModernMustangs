@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 #For blogging with Jekyll 
-gem 'bloggy'
+gem 'bloggy', :github => "zbruhnke/bloggy", :branch => "defaultassets"
 
 #Forums for rails 4 and its dependencies
 gem 'forem', :github => "radar/forem", :branch => "rails4"
