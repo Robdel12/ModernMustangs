@@ -20,8 +20,11 @@ gem 'will_paginate', '3.0.4'
 #Devise for a user model and logging in & our
 gem 'devise'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Heroku stuff
+gem 'rails_12factor', group: :production
+
+# Use Posgres as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -56,7 +59,7 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+ gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'debugger', group: [:development, :test]
