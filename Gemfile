@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+#I don't know how to do the new Rails 4 way of strong params.. This is a temp hack.
+#gem "protected_attributes", "~> 1.0.3"
+
 #For blogging with Jekyll 
 gem 'bloggy', :github => "zbruhnke/bloggy", :branch => "defaultassets"
 

@@ -1,5 +1,6 @@
 @import "thumper";
 @include thumper-developement-grids;
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500);
 
 *, *:before, *:after{
   box-sizing: border-box;
@@ -7,6 +8,7 @@
 
 html, body{
   height: 100%;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 //Blog styling
