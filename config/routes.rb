@@ -1,5 +1,7 @@
 MondernMustangs::Application.routes.draw do
 
+  resources :comments 
+
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
@@ -12,10 +14,9 @@ MondernMustangs::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root :to => "blog#index"
-  get '/home' => 'pages#home'
   
   get 'blog' => 'blog#index'
   get 'blog/:title' => 'blog#post'
-
+  get 'blog/:title/:comments' => 'comments#index'
 
 end
